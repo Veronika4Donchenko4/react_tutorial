@@ -1,10 +1,22 @@
+import { useState } from 'react';
 import './App.css';
-import RandomNumber from '../src/componenst/RandomNumber';
+import Button from './componenst/Button';
+import Counter from './componenst/Counter';
 
 function App() {
+  console.log('App rendered');
+  const [count, setCount] = useState(0);
+  const incrementCounter = () => {
+    setCount(count + 1);
+  };
+
   return (
     <div className="App">
-      <RandomNumber maxNum={10} />
+      <Counter count={count} />
+      <Button onClick={incrementCounter} />
+      <Button onClick={incrementCounter} />
+      <Button onClick={incrementCounter} />
+      <Button onClick={incrementCounter} />
     </div>
   );
 }
