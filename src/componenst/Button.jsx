@@ -1,6 +1,5 @@
-const Button = ({ onClick }) => {
-  console.log('Button rendered');
-  return <button onClick={onClick}>Click me!</button>;
+const Button = ({ onClick, text }) => {
+  return <button onClick={onClick}>{text}</button>;
 };
 
 export default Button;

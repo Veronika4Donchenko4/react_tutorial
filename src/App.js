@@ -3,8 +3,16 @@ import './App.css';
 import Button from './componenst/Button';
 import Counter from './componenst/Counter';
 
+const texts = [
+  'Button1',
+  'Button2',
+  'Button3',
+  'Button4',
+  'Buttonadd',
+  'ButtonExra',
+];
+
 function App() {
-  console.log('App rendered');
   const [count, setCount] = useState(0);
   const incrementCounter = () => {
     setCount(count + 1);
@@ -13,10 +21,10 @@ function App() {
   return (
     <div className="App">
       <Counter count={count} />
-      <Button onClick={incrementCounter} />
-      <Button onClick={incrementCounter} />
-      <Button onClick={incrementCounter} />
-      <Button onClick={incrementCounter} />
+      {texts.map((text, index) => {
+        console.log(index);
+        return <Button onClick={incrementCounter} text={text} key={index} />;
+      })}
     </div>
   );
 }
